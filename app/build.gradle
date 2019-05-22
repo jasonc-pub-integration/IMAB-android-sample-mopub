@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter() // includes the MoPub SDK and AVID library
+    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "inmobise.IMAB.sample"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    /* Compile all .aar in the libs directory, including the IM SDK */
+//     implementation fileTree(include: ['*.aar'], dir: 'libs')
+
+    /* Selectively compile required dependencies instead */
+    implementation files('libs/InMobiSDK.aar')
+    implementation files('libs/InMobiABMoPubPlugin.aar')
+//    implementation files('libs/DTBAndroidSDK-7.3.aar')
+
+    /* Use the MoPub 5.5 aar and latest volley */
+    implementation('com.mopub:mopub-sdk:5.5.0@aar') {
+        transitive = true
+        exclude module: 'libAvid-mopub' // To exclude AVID
+        exclude module: 'moat-mobile-app-kit' // To exclude Moat
+    }
+    implementation 'com.mopub.volley:mopub-volley:2.0.0'
+
+    /* Required by InMobi documentation */
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation('com.google.android.gms:play-services-plus:15.0.1') {
+        exclude group: 'com.android.support'
+    }
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}
