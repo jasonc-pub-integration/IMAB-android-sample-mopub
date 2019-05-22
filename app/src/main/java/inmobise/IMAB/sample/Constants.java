@@ -15,7 +15,6 @@ public final class Constants {
 
     final static String log = "IMAB-Example";
 
-
     final static String MP_BannerAdUnitID = "549952a8447d4911b8d690c21b66abac";
     final static String MP_InterstitialAdUnitID = "2beb37597378451f85ef0bfba0cd7908";
 
@@ -34,9 +33,9 @@ public final class Constants {
 
     final static String IMAB_Interstitial_Explanation = "This example is how IMAB should be implemented for an interstitial. Any ad calls to InMobi should be made before MoPub is called. On onInterstitialDismissed or onInterstitialFailed, this example will start a 10 second timer before making another bid request.";
 
-    final static String IMAB_KW_Banner_Explanation = "";
+    final static String IMAB_KW_Banner_Explanation = "This example expands on the IMAB Banner example, but additionally provides more insight at the cost of ease of integration. Instead of InMobi manipulating the keywords for you, we return a bid response object with keywords for you to add yourself to the MoPub ad object";
 
-    final static String IMAB_KW_Interstitial_Explanation = "";
+    final static String IMAB_KW_Interstitial_Explanation = "This example expands on the IMAB Interstitial example, but additionally provides more insight at the cost of ease of integration. Instead of InMobi manipulating the keywords for you, we return a bid response object with keywords for you to add yourself to the MoPub interstitial object";
 
 
 
