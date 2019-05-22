@@ -10,8 +10,6 @@ import com.inmobi.plugin.mopub.IMAudienceBidder;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
-import party.parrot.partyparrot.R;
-
 import static inmobise.IMAB.sample.Constants.IMAB_BannerPLC;
 import static inmobise.IMAB.sample.Constants.IMAB_Banner_Explanation;
 import static inmobise.IMAB.sample.Constants.MP_BannerAdUnitID;
@@ -94,6 +92,7 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
 
 
 
+
     public void onBannerClicked(MoPubView banner) {
         Log.d(log, "Banner clicked");
     }
@@ -107,15 +106,20 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
     }
 
 
-    public void setBannerHelperText() {
-        TextView tv = findViewById(R.id.bannerTextView);
-        tv.setText(IMAB_Banner_Explanation);
-    }
-
     @Override
     protected void onDestroy() {
         moPubView.destroy();
         super.onDestroy();
     }
+
+
+    // Various UI methods, ignore these. Or if you can improve on them, make a PR! Much thanks.
+
+    public void setBannerHelperText() {
+        TextView tv = findViewById(R.id.bannerTextView);
+        tv.setText(IMAB_Banner_Explanation);
+    }
+
+
 
 }

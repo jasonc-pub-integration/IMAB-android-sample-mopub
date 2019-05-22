@@ -8,7 +8,7 @@
     tools:context="inmobise.IMAB.sample.IMAB_MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_imab_banner"
         android:layout_width="170dp"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
@@ -23,7 +23,37 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_imab_banner_kw"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="showBannerKeywordActivity"
+        android:text="IMAB BANNER KEYWORDS EXAMPLE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_imab_interstitial" />
+
+    <Button
+        android:id="@+id/button_imab_interstitial_kw"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="showInterstitialKeywordActivity"
+        android:text="IMAB INTERSTITIAL KEYWORDS Example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_imab_banner_kw" />
+
+    <Button
+        android:id="@+id/button_imab_interstitial"
         android:layout_width="170dp"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
@@ -35,7 +65,7 @@
         android:text="IMAB Interstitial Example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button_imab_banner" />
 
 
     <TextView

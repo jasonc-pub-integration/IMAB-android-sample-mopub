@@ -21,7 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="inmobise.IMAB.sample.IMAB_MainActivity">
+        <activity android:name=".IMAB_MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,9 +58,10 @@
         <activity
             android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
-
-        <activity android:name="inmobise.IMAB.sample.IMAB_BannerActivity" android:parentActivityName="inmobise.IMAB.sample.IMAB_MainActivity"/>
-        <activity android:name="inmobise.IMAB.sample.IMAB_InterstitialActivity" android:parentActivityName="inmobise.IMAB.sample.IMAB_MainActivity" />
+        <activity android:name=".IMAB_BannerActivity" android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_InterstitialActivity" android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_BannerKWActivity" android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_InterstitialKWActivity" android:parentActivityName=".IMAB_MainActivity" />
     </application>
 
 </manifest>

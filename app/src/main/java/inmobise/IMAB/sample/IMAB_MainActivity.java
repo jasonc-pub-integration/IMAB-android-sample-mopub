@@ -14,8 +14,6 @@ import com.mopub.common.SdkInitializationListener;
 import com.inmobi.ads.InMobiAudienceBidder;
 import com.inmobi.sdk.InMobiSdk;
 
-import party.parrot.partyparrot.R;
-
 import static inmobise.IMAB.sample.Constants.IMAB_APPID;
 import static inmobise.IMAB.sample.Constants.MP_BannerAdUnitID;
 import static inmobise.IMAB.sample.Constants.log;
@@ -51,6 +49,11 @@ public class IMAB_MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+    // Various UI methods, ignore these. Or if you can improve on them, make a PR! Much thanks.
+
     public void getDisplaySDKVersions() {
         TextView mpv = findViewById(R.id.MPSdkVersion);
         mpv.setText("MoPub SDK Version:" + MoPub.SDK_VERSION);
@@ -67,6 +70,18 @@ public class IMAB_MainActivity extends AppCompatActivity {
 
     public void showInterstitialActivity(View view){
         Intent intent = new Intent(this,IMAB_InterstitialActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void showBannerKeywordActivity(View view){
+        Intent intent = new Intent(this, IMAB_BannerKWActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void showInterstitialKeywordActivity(View view){
+        Intent intent = new Intent(this, IMAB_InterstitialKWActivity.class);
         startActivity(intent);
 
     }

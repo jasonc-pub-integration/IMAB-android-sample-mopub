@@ -16,8 +16,6 @@ import com.mopub.mobileads.MoPubInterstitial;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import party.parrot.partyparrot.R;
-
 import static inmobise.IMAB.sample.Constants.IMAB_InterstitialFailureDelay;
 import static inmobise.IMAB.sample.Constants.IMAB_InterstitialPLC;
 import static inmobise.IMAB.sample.Constants.IMAB_InterstitialSuccessDelay;
@@ -138,6 +136,14 @@ public class IMAB_InterstitialActivity extends AppCompatActivity implements MoPu
 
 
 
+    @Override
+    protected void onDestroy() {
+        mInterstitial.destroy();
+        super.onDestroy();
+    }
+
+    // Various UI methods, ignore these. Or if you can improve on them, make a PR! Much thanks.
+
     public void updateUIForInterstitialIsReady(){
 
         Button load = findViewById(R.id.buttonLoadInterstitial);
@@ -145,7 +151,6 @@ public class IMAB_InterstitialActivity extends AppCompatActivity implements MoPu
         load.setEnabled(false);
         Button show = findViewById(R.id.buttonShowInterstitial);
         show.setVisibility(View.VISIBLE);
-
         ProgressBar spinner = findViewById(R.id.intProgressBar);
         spinner.setVisibility(View.INVISIBLE);
 
@@ -180,11 +185,7 @@ public class IMAB_InterstitialActivity extends AppCompatActivity implements MoPu
     }
 
 
-    @Override
-    protected void onDestroy() {
-        mInterstitial.destroy();
-        super.onDestroy();
-    }
+
 
 
 
