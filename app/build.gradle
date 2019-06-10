@@ -34,22 +34,10 @@ dependencies {
 //    implementation files('libs/DTBAndroidSDK-7.3.aar')
 
     /* Use the MoPub 5.5 aar and latest volley if you need native */
-//    implementation('com.mopub:mopub-sdk:5.5.0@aar') {
-//        transitive = true
-//        exclude module: 'libAvid-mopub' // To exclude AVID
-//        exclude module: 'moat-mobile-app-kit' // To exclude Moat
-//    }
-
-    // Otherwise, if you want to use latest MoPub, please use modularization like below:
-
-    // For banners
-    implementation('com.mopub:mopub-sdk-banner:5.7.1@aar') {
+    implementation('com.mopub:mopub-sdk:5.7.1@aar') {
         transitive = true
-    }
-
-    // For rewarded videos. This will automatically also include interstitials
-    implementation('com.mopub:mopub-sdk-rewardedvideo:5.7.1@aar') {
-        transitive = true
+        exclude module: 'libAvid-mopub' // To exclude AVID
+        exclude module: 'moat-mobile-app-kit' // To exclude Moat
     }
 
 
