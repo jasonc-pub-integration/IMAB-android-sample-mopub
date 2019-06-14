@@ -20,10 +20,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".IMAB_MainActivity">
+        <activity android:name=".IMAB_MainActivity"
+            android:label="IMAB MoPub Test App" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -57,10 +58,18 @@
         <activity
             android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity android:name=".IMAB_BannerActivity" android:parentActivityName=".IMAB_MainActivity" />
-        <activity android:name=".IMAB_InterstitialActivity" android:parentActivityName=".IMAB_MainActivity" />
-        <activity android:name=".IMAB_BannerKWActivity" android:parentActivityName=".IMAB_MainActivity" />
-        <activity android:name=".IMAB_InterstitialKWActivity" android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_BannerActivity"
+            android:label="IMAB MoPub Banner Example"
+            android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_InterstitialActivity"
+            android:label="IMAB MoPub Interstitial Example"
+            android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_BannerKWActivity"
+            android:label="IMAB MoPub Banner KW Example"
+            android:parentActivityName=".IMAB_MainActivity" />
+        <activity android:name=".IMAB_InterstitialKWActivity"
+            android:label="IMAB Interstitial KW Example"
+            android:parentActivityName=".IMAB_MainActivity" />
     </application>
 
 </manifest>
