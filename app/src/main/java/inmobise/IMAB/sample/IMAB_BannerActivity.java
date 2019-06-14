@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inmobi.plugin.mopub.IMAudienceBidder;
 import com.mopub.mobileads.MoPubErrorCode;
@@ -50,6 +51,9 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
                         // If the banner has not yet been loaded, call loadAd to load the ad into the view
                         if (!bannerLoaded) {
                             moPubView.loadAd();
+                            toast_updateMPAdViewLoadCalled(true);
+                        } else {
+                            toast_updateNewBidMade(true);
                         }
 
                     }
@@ -60,6 +64,9 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
                         // If the banner has not yet been loaded, call loadAd on the updated ad view
                         if (!bannerLoaded) {
                             moPubView.loadAd();
+                            toast_updateMPAdViewLoadCalled(false);
+                        } else {
+                            toast_updateNewBidMade(false);
                         }
 
                     }
@@ -114,11 +121,22 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
     }
 
 
-    // Various UI methods, ignore these. Or if you can improve on them, make a PR! Much thanks.
+    // Various UI helper methods, ignore these. Or if you can improve on them, make a PR! Much thanks.
 
+    // Semi-helpful method to set a long winded explanation
     public void setBannerHelperText() {
         TextView tv = findViewById(R.id.bannerTextView);
         tv.setText(IMAB_Banner_Explanation);
+    }
+
+    // Semi-helpful toast method to help with debugging
+    public void toast_updateMPAdViewLoadCalled(boolean b){
+        Toast.makeText(this, "Load called on MPAdView, with a " + (b?"successful":"failed") + " bid attempt", Toast.LENGTH_SHORT).show();
+    }
+
+    // Semi-helpful toast method to help with debugging
+    public void toast_updateNewBidMade(boolean b){
+        Toast.makeText(this, "New " + (b?"successful":"failed") + " bid attempt made.", Toast.LENGTH_SHORT).show();
     }
 
 
