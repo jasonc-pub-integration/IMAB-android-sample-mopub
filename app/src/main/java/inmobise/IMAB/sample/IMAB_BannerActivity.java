@@ -27,6 +27,7 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imab__banner);
+
         configureBanner();
         setBannerHelperText();
     }
@@ -48,7 +49,7 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
 
                         // If the banner has not yet been loaded, call loadAd to load the ad into the view
                         if (!bannerLoaded) {
-                            m.loadAd();
+                            moPubView.loadAd();
                         }
 
                     }
@@ -58,7 +59,7 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
 
                         // If the banner has not yet been loaded, call loadAd on the updated ad view
                         if (!bannerLoaded) {
-                            m.loadAd();
+                            moPubView.loadAd();
                         }
 
                     }
