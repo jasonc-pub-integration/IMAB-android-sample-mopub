@@ -43,7 +43,7 @@ public class IMAB_BannerActivity extends AppCompatActivity implements MoPubView.
         inMobiAudienceBidder = IMAudienceBidder.getInstance();
 
         bannerBidToken = inMobiAudienceBidder.createBidToken(this, IMAB_BannerPLC,
-                moPubView, new IMAudienceBidder.IMAudienceBidderBannerListener() {
+                moPubView, 320, 50, new IMAudienceBidder.IMAudienceBidderBannerListener() {
 
                     @Override
                     public void onBidReceived(@NonNull MoPubView m) {

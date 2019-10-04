@@ -30,7 +30,7 @@ dependencies {
 
     /* Selectively compile required dependencies instead */
     implementation files('libs/InMobiSDK.aar')
-    implementation files('libs/InMobiABMoPubPlugin.aar')
+    implementation files('libs/InMobiABMoPubPlugin-1.0.4.aar')
 //    implementation files('libs/DTBAndroidSDK-7.3.aar')
 
     /* Use the MoPub 5.5 aar and latest volley if you need native */
